@@ -10,6 +10,11 @@
 <p th:text="${'Text: ' + note.getText()}">VALUE</p>
 <p th:text="${note.getId()}">VALUE</p>
 
+<a th:href="@{/notes/{id}/edit(id=${note.getId()})}">Edit</a>
+
+<form th:method="DELETE" th:action="@{/notes/{id}(id=${note.getId()})}">
+  <input type="submit" value="Delete"/>
+
 
 </body>
 </html>

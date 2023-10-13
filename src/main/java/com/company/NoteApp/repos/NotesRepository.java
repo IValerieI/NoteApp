@@ -7,7 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface NotesRepository extends JpaRepository<Note, Integer> {
 
-//    List<Note> findByNoteName(String noteName);
-//    List<Note> findByOwner(User owner);
 
 }

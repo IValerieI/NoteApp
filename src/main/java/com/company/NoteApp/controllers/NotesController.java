@@ -23,13 +23,13 @@ public class NotesController {
     @GetMapping()
     public String index(Model model) {
         model.addAttribute("notes", notesService.findAll());
-        return "index";
+        return "notes/index";
     }
 
     @GetMapping("/{id}")
     public String show(@PathVariable("id") int id, Model model) {
         model.addAttribute("note", notesService.findOne(id));
-        return "show";
+        return "notes/show";
     }
 
     @GetMapping("/new")

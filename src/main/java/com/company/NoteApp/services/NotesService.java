@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +32,7 @@ public class NotesService {
     @Transactional
     public void update(int id, Note updatedNote) {
         updatedNote.setId(id);
+        updatedNote.setCreatedAt(new Timestamp(System.currentTimeMillis()));
         notesRepository.save(updatedNote);
     }
 
@@ -48,13 +50,6 @@ public class NotesService {
         return foundPerson.orElse(null);
     }
 
-//    public List<Note> findByNoteName(String noteName) {
-//        return notesRepository.findByNoteName(noteName);
-//    }
-//
-//    public List<Note> findByOwner(User owner) {
-//        return notesRepository.findByOwner(owner);
-//    }
 
 
 
